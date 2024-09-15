@@ -55,5 +55,8 @@ public class MainActivity extends AppCompatActivity {
         si.putExtra("blue", sumblue);
         si.putExtra("red", sumred);
         startActivity(si);
+        sumblue = 0;
+        sumred = 0;
+
     }
 }
