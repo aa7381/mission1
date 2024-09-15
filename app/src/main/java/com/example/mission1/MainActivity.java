@@ -1,6 +1,8 @@
 package com.example.mission1;
 
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,15 +14,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity    {
-
+public class MainActivity extends AppCompatActivity {
 
 
     Button bluebtn, redbtn, pausebtn;
     int sumblue, sumred;
-    int ok ;
+    int ok;
+
     @Override
-    protected void onCreate (Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bluebtn = findViewById(R.id.bluebtn);
@@ -28,9 +30,6 @@ public class MainActivity extends AppCompatActivity    {
         pausebtn = findViewById(R.id.pausebtn);
         sumblue = 0;
         sumred = 0;
-
-
-
 
 
         bluebtn.setOnClickListener(new View.OnClickListener() {
@@ -48,19 +47,13 @@ public class MainActivity extends AppCompatActivity    {
             }
         });
 
-        pausebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openmenu();
-            }
-        });
     }
 
-    public void openmenu() {
+    public void menu(View view) {
 
-        Intent si = new Intent(this,menuactivity.class);
+        Intent si = new Intent(this, menuactivity.class);
         si.putExtra("blue", sumblue);
         si.putExtra("red", sumred);
         startActivity(si);
     }
-    }
+}
